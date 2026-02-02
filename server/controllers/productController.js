@@ -39,7 +39,7 @@ const createProduct = async (req, res) => {
         }
         res.status(201).json({ message: 'Product added successfully' });
     } catch (err) {
-        console.error("Create Product Exception:", err);
+        console.error("Create Product CRITICAL FAILURE:", JSON.stringify(err, null, 2));
         res.status(500).json({ error: err.message, details: err });
     }
 };
