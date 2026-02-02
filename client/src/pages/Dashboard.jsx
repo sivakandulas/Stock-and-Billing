@@ -48,19 +48,19 @@ const Dashboard = () => {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
                 <div className="card">
                     <h3>Total Sales</h3>
-                    <p style={{ fontSize: '2rem', fontWeight: 'bold' }}>₹{stats.totalSales.toFixed(2)}</p>
+                    <p style={{ fontSize: '2rem', fontWeight: 'bold' }}>₹{(stats?.totalSales || 0).toFixed(2)}</p>
                 </div>
                 <div className="card">
                     <h3>Today's Sales</h3>
-                    <p style={{ fontSize: '2rem', fontWeight: 'bold', color: '#10b981' }}>₹{stats.salesToday.toFixed(2)}</p>
+                    <p style={{ fontSize: '2rem', fontWeight: 'bold', color: '#10b981' }}>₹{(stats?.salesToday || 0).toFixed(2)}</p>
                 </div>
                 <div className="card">
                     <h3>Last 7 Days</h3>
-                    <p style={{ fontSize: '2rem', fontWeight: 'bold', color: '#3b82f6' }}>₹{stats.salesWeek.toFixed(2)}</p>
+                    <p style={{ fontSize: '2rem', fontWeight: 'bold', color: '#3b82f6' }}>₹{(stats?.salesWeek || 0).toFixed(2)}</p>
                 </div>
                 <div className="card">
                     <h3>Last 30 Days</h3>
-                    <p style={{ fontSize: '2rem', fontWeight: 'bold', color: '#8b5cf6' }}>₹{stats.salesMonth.toFixed(2)}</p>
+                    <p style={{ fontSize: '2rem', fontWeight: 'bold', color: '#8b5cf6' }}>₹{(stats?.salesMonth || 0).toFixed(2)}</p>
                 </div>
                 <div className="card">
                     <h3>Total Orders</h3>
