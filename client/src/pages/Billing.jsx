@@ -27,9 +27,9 @@ const Billing = () => {
     }, []);
 
     // Filter products based on search
-    const filteredProducts = products.filter(p =>
+    const filteredProducts = Array.isArray(products) ? products.filter(p =>
         p.Name.toLowerCase().includes(productSearch.toLowerCase()) && p.StockQuantity > 0
-    );
+    ) : [];
 
     const addToCart = (product) => {
         setCart(prev => {
@@ -163,7 +163,7 @@ const Billing = () => {
                         onChange={(e) => setSelectedCustomer(e.target.value)}
                     >
                         <option value="">-- Select Customer --</option>
-                        {customers.map(c => (
+                        {Array.isArray(customers) && customers.map(c => (
                             <option key={c.CustomerID} value={c.CustomerID}>{c.Name} ({c.Phone})</option>
                         ))}
                     </select>
