@@ -34,7 +34,7 @@ const Customers = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {customers.map(c => (
+                        {Array.isArray(customers) ? customers.map(c => (
                             <tr key={c.CustomerID}>
                                 <td>{c.Name}</td>
                                 <td>{c.Phone}</td>
@@ -44,7 +44,9 @@ const Customers = () => {
                                     ₹{(c.TotalBalance || 0).toFixed(2)}
                                 </td>
                             </tr>
-                        ))}
+                        )) : (
+                            <tr><td colSpan="5" style={{ textAlign: 'center' }}>No customers found (or error loading).</td></tr>
+                        )}
                     </tbody>
                 </table>
             </div>

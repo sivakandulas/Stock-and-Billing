@@ -34,7 +34,7 @@ const Inventory = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {products.map(p => (
+                        {Array.isArray(products) && products.map(p => (
                             <tr key={p.ProductID}>
                                 <td>{p.Name}</td>
                                 <td>{p.CategoryID}</td>
@@ -45,7 +45,7 @@ const Inventory = () => {
                                 </td>
                             </tr>
                         ))}
-                        {products.length === 0 && <tr><td colSpan="5" style={{ textAlign: 'center' }}>No products found.</td></tr>}
+                        {(!Array.isArray(products) || products.length === 0) && <tr><td colSpan="5" style={{ textAlign: 'center' }}>No products found.</td></tr>}
                     </tbody>
                 </table>
             </div>
