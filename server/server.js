@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 
 // Connect to DB and Start Server
 // Connect to DB and Start Server
-const PORT = process.env.PORT || 5000;
+// Connect to DB and Start Server
 
 if (require.main === module) {
     app.listen(PORT, () => {
